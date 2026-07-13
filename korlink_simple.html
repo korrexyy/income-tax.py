@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korlink Haven - Furniture Store</title>
+    <link rel="stylesheet" href="korlink_simple.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1>Korlink Haven</h1>
+            <button id="cartBtn" class="cart-btn">🛒 Cart (<span id="count">0</span>)</button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2>Welcome to Korlink Haven</h2>
+        <p>Premium Furniture for Your Home</p>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+        <h2>Our Products</h2>
+        
+        <div class="filter">
+            <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+            <button class="filter-btn" onclick="filterProducts('sofa')">Sofas</button>
+            <button class="filter-btn" onclick="filterProducts('chair')">Chairs</button>
+            <button class="filter-btn" onclick="filterProducts('table')">Tables</button>
+        </div>
+
+        <div class="product-list">
+            <div class="product" data-type="sofa">
+                <h3>Luxury Sofa</h3>
+                <p>Very comfortable sofa</p>
+                <p class="price">$1,299</p>
+                <button onclick="addCart('Luxury Sofa', 1299)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-type="chair">
+                <h3>Office Chair</h3>
+                <p>Ergonomic design</p>
+                <p class="price">$599</p>
+                <button onclick="addCart('Office Chair', 599)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-type="table">
+                <h3>Coffee Table</h3>
+                <p>Modern wooden table</p>
+                <p class="price">$399</p>
+                <button onclick="addCart('Coffee Table', 399)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-type="sofa">
+                <h3>Sectional Sofa</h3>
+                <p>Perfect for large rooms</p>
+                <p class="price">$1,599</p>
+                <button onclick="addCart('Sectional Sofa', 1599)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-type="chair">
+                <h3>Recliner Chair</h3>
+                <p>Relaxing recliner</p>
+                <p class="price">$799</p>
+                <button onclick="addCart('Recliner Chair', 799)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-type="table">
+                <h3>Dining Table</h3>
+                <p>Seats 6 people</p>
+                <p class="price">$699</p>
+                <button onclick="addCart('Dining Table', 699)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <h2>Shopping Cart</h2>
+            <button class="close" onclick="closeCart()">&times;</button>
+            <div id="cartList"></div>
+            <h3>Total: $<span id="total">0</span></h3>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="korlink_simple.js"></script>
+</body>
+</html>
