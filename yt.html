@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 
   <head>
-    <meta charset="UTF-8">
+   <!-- <meta charset="UTF-8">
     <meta name="007" content=" Lawal Abdulrazaq">
-    <meta name="description" content=" Hi my This is my first webpage">
+    <meta name="description" content=" Hi my This is my first webpage"> -->
     <title> My First Webpage</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link rel="stylesheet" href="main.css">
+   <!-- <link rel="icon" type="image/x-icon" href="favicon.png"> -->
+    <link rel="stylesheet" href="aiuun.css">
 
   </head>
   <body>
-    <h1> Hello Guys </h1>
-    <hr>
-    <nav>
+    
+    <header>
+    <h1> My Goals for this Year</h1>
+    <nav aria-label="primary-navigation">
+      <h2>Primary Navigation</h2>
       <ul> 
         <li>
-
+        <a href="#html">learning HTML</a>
         </li>
-      </ul>   
-    </nav>
-    
+        <li>
+          <a href="#contact">Contact me</a>
+        </li>   
+      </ul>
+      </nav> 
+    </header>
     <hr>
-    <section id="html">
-
+    <main>
+    <article id="html">
     <h2> I'm Ready to Learn Html </h2>
     <p> This is my first webpage</p>
-    <img src="download.jpg" alt="download" width="104" height="142">
-
+    <section>
+      <h3>HTML5</h3>
+    <img src="img/html logo.png" alt="HTML5 Logo" title="i'm learning html" 
+    style="width:300px;height:300px;">
+    <figure>
+      <figcaption> An Example of HTML5 code</figcaption>
+      <P>
+       <code>
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+       </code> 
+      </P>
+    </figure>
+    </section>
+    <section>
     <h3> My Daily schedule </h3>
     <p> Let me tell you how:</p>
     <ol>
@@ -36,31 +53,49 @@
         <a href="https://developer.mozilla.org/" >MDN</a>
       </abbr></li>
     </ol>
-      </section>
+    <aside>
+      <details>
+        <summary>the number of hours I spend on each activity</summary>
+        <p>I spend about 2 hours on HTML, 1 hour on CSS, and 1 hour on JavaScript each day.</p>
+      </details>
+    </aside>
+    </section>
+      </article>
+      
+      
     <hr>
     
-    <section id="vacation">
+    <article id="vacation">
      <h2> I Am Also Planning a Vacation </h2>
     <p> I've been working hard and <em>really need a getaway</em></p>
     <p> i live in <abbr title="vitoria island">VI</abbr> so i want to enjoy life</p>
-
+      <section> 
     <h3> Places I'd will like to visit</h3>
     <ul>
     <li><p> I've heard good thing about spain</p></li>
+    <figure>
+    <img src="img/barca.jpg" alt="spain" title="spain" width="400" height="225">
+    <figcaption> Barcelona, Spain</figcaption>
+    </figure>
+    
     <li><p> I've heard good things about going here</p>
     <address>
-      32 femi sule street, <br>
-      Dideolu estate, <br>
-      Victoria Island, <br>
-      Lagos, Nigeria <br>
+      Carrer de Mallorca, 401, <br>
+      08013 Barcelona, <br>
+      Spain <br>
     </address>
+    <figure>
+    <img src="img/familla.jpg" alt="sagrada familia" title="sagrada familia" width="400" height="225">
+    <figcaption> Sagrada Família, Barcelona, Spain</figcaption>
+    </figure>
     </li>
     </ul>
+    </section>
 
 
   <!-- This is a comment -->
-
-     <h3> Places I'd will like to Avoid</h3>
+      <section> 
+     <h3> Places I'd will like to Avoid</h3>lawal akorede is a bot
      <dl>
       <dt>Northern Europe</dt>
       <dd>Too cold for my <strong>taste</strong></dd>
@@ -71,9 +106,140 @@
       <dt> Eastern Europe</dt>
       <dd> I don't like the food</dd> 
      </dl>
-      </section>
-     <hr>
-      &lt; &lt; &lt; &copy; <a href="about.html">Lawal Abdulrazaq</a> &gt; &gt; &gt;
+     </section>
+    </article>
+      </main>
+    <hr>
+      <article id="contact">
+      <h2> Contact Me</h2> 
+      <p> I'd really like to hear from you!</p>
 
+      
+      <form action="https://httpbin.org/get" method="get">
+        <fieldset>
+          <legend>Personal Information</legend>
+        <p>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" 
+        placeholder="Enter your first name "
+        autocomplete="on" required autofocus>
+        </p>
+        <p> 
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" 
+        placeholder="Enter your lastname "
+        autocomplete="on" required>
+        </p>
+        <p> 
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" 
+        placeholder="Enter your password " required>
+        </p>
+        <p> 
+        <label for="Phone">Phone:</label>
+        <input type="tel" id="Phone" name="Phone" 
+        placeholder="+234123456789 "  pattern="^\+234\d{10}$" required>
+        </p>
+       <p> 
+        <label for="decade">Favourite decade:</label>
+        <input type="number" id="decade" name="decade"
+        min="1930" max ="2020" step="10" value="1990" required>
+        <p>
+          <label for="coffee">Favourite Coffee:</label>
+          <select name="coffee" id="coffee" multiple size="5">
+            <optgroup label="Coffees">
+            <option value="regular coffee" selected>Regular Coffee
+            </option>
+            <option value="iced coffee">Iced Coffee
+            </option>
+            </optgroup>
+            <optgroup label="Espresso drinks">
+            <option value="latte">Latte
+            </option>
+            <option value="cappuccino">Cappuccino
+            </option>
+            <option value="cortado">Cortado
+            </option>
+            <option value="americano">Americano
+            </option>
+            </optgroup>
+            <option value="others">Others
+            </option>
+          </select>
+        </p>
+        </p>
+       <!--  <p> <label for="coffee">Favourite Coffee:</label>
+        <input type="text" name="coffee" id="coffee" list="coffee-options">
+        <datalist id="coffee-options">
+          <option value="Regular Coffee">
+          <option value="Iced Coffee">
+          <option value="Latte">
+          <option value="Cappuccino">
+          <option value="Cortado">
+          <option value="Americano">
+          <option value="Others">
+        </datalist>
+        </p> -->
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>what is your favourite food?</legend>
+          <p>
+            <input type="radio" id="tacos" name="food" value="tacos" >
+            <label for="tacos">Tacos</label>
+          </p>
+          <p>
+            <input type="radio" id="pizza" name="food" value="pizza" >
+            <label for="pizza">Pizza</label>
+          </p>
+          <p>
+            <input type="radio" id="other" name="food" value="other" >
+            <label for="other">Other</label>
+          </p>
+          </fieldset>
+          <br>
+          <fieldset>
+            <Legend>Do you have a pets?</Legend>
+            <p>
+              <input type="checkbox"  name="pets" id="dog" value="dog">
+              <label for="dog">Dog</label>
+            </p>
+            <p>
+              <input type="checkbox"  name="pets" id="cat" value="cat">
+              <label for="cat">Cat</label>
+            </p>
+            <p>
+              <input type="checkbox"  name="pets" id="bird" value="bird">
+              <label for="bird">Bird</label>
+            </p>
+            <p>
+              <input type="checkbox"  name="pets" id="Otherpets" value="other">
+              <label for="Otherpets">Other</label>
+            </p>
+          </fieldset>
+          <br>
+          <fieldset>
+            <legend>Send Me A Note</legend>
+            <label for="message">Your message:</label>
+            <br>
+            <textarea name="message" id="message" cols="30" rows="5" 
+            placeholder="Enter your message here"></textarea>
+          </fieldset>
+          <br>
+          <button type="submit">Submit</button>
+          <button type="submit"formaction="https://httpbin.org/post" 
+          formmethod="post">post</button>
+          <button type="reset">Reset</button>
+
+      </form>
+      <hr>
+     <footer>
+      <p>
+      &lt; &lt; &lt; &copy; <a href="about.html">Lawal Abdulrazaq</a> &gt; &gt; &gt;
+      </p>
+      <p>
+      <a href="#">Back to Top</a>
+      </p>
+     </footer>
   </body>
-</html>nn 
+</html>
