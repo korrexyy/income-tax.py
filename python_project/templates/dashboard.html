@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #0f172a, #111827); color: white; margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: auto; }
+    .card { background: rgba(255,255,255,0.08); padding: 20px; border-radius: 16px; margin-bottom: 20px; }
+    .top { display: flex; justify-content: space-between; align-items: center; }
+    form input, form textarea { width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: none; }
+    button { padding: 10px 14px; border: none; border-radius: 8px; background: #38bdf8; color: white; cursor: pointer; }
+    .task { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; margin: 8px 0; }
+    .done { text-decoration: line-through; color: #9ca3af; }
+    a { color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card top">
+      <h1>Smart Personal Dashboard</h1>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="card">
+      <h2>Add Task</h2>
+      <form action="{{ url_for('add_task') }}" method="post">
+        <input type="text" name="title" placeholder="What do you want to do?" required>
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Your Tasks</h2>
+      {% for task in tasks %}
+        <div class="task">
+          <span class="{% if task.done %}done{% endif %}">{{ task.title }}</span>
+          <div>
+            <a href="{{ url_for('toggle_task', task_id=task.id) }}">Toggle</a>
+            <a href="{{ url_for('delete_task', task_id=task.id) }}">Delete</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="card">
+      <h2>Add Note</h2>
+      <form action="{{ url_for('add_note') }}" method="post">
+        <textarea name="content" rows="4" placeholder="Write your note here..."></textarea>
+        <button type="submit">Save Note</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Your Notes</h2>
+      {% for note in notes %}
+        <div class="task">
+          <span>{{ note.content }}</span>
+          <a href="{{ url_for('delete_note', note_id=note.id) }}">Delete</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
