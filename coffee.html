@@ -1,0 +1,360 @@
+<!doctype html>
+<!--
+  coffee.html
+  Single-file modern, responsive redesign for a specialty coffee shop.
+  - Warm earthy palette (roasted brown, warm cream, espresso green accents)
+  - Serif headings (Playfair Display) + Sans body (Inter)
+  - Sections: Hero, About, Menu, Contact/Location
+  - Smooth scrolling, scroll-triggered fade-in animations, hover effects
+  - Semantic HTML5 + accessible markup
+
+  Drop this file in place and open in browser. No build step required.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Roast & Leaf — Specialty Coffee</title>
+
+  <!-- Fonts: serif for headings, sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Palette and base ---------------------------------------------------- */
+    :root{
+      --bg-cream:#f6efe6; /* warm cream */
+      --bg-dark:#2b1f18;  /* roasted brown */
+      --accent:#476a52;   /* espresso green */
+      --muted:#8a7f77;
+      --card:#fff;
+      --glass: rgba(75, 50, 42, 0.06);
+    }
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; color:var(--bg-dark); background:linear-gradient(180deg,var(--bg-cream),#efe6d9);}
+
+    /* Layout -------------------------------------------------------------- */
+    header{background:linear-gradient(90deg, rgba(75,50,42,0.06), transparent); padding:20px 6%; position:sticky; top:0; backdrop-filter: blur(4px); z-index:30}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--bg-dark)}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,var(--bg-dark),#3b2a23);display:inline-grid;place-items:center;color:var(--bg-cream);font-weight:700;box-shadow:0 6px 18px rgba(43,31,24,0.12)}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px;align-items:center}
+    nav a{color:var(--bg-dark);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a.button{background:var(--accent);color:#fff}
+
+    main{max-width:1100px;margin:36px auto;padding:0 6%}
+    .hero{display:grid;grid-template-columns:1fr;gap:24px;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(43,31,24,0.03), rgba(75,50,42,0.02));align-items:center}
+    .hero-inner{display:flex;flex-direction:column;gap:18px}
+    h1,h2,h3{font-family:'Playfair Display', serif;margin:0;color:var(--bg-dark)}
+    h1{font-size:2rem;line-height:1.05}
+    p.lead{color:var(--muted);margin:0;max-width:60ch}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:none;cursor:pointer;font-weight:700;text-decoration:none}
+    .btn-primary{background:var(--bg-dark);color:var(--bg-cream)}
+    .btn-ghost{background:transparent;border:1px solid rgba(43,31,24,0.08);color:var(--bg-dark)}
+
+    /* Two column hero image */
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .hero-image{border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(43,31,24,0.12)}
+    .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Sections ------------------------------------------------------------ */
+    section{margin-top:28px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid var(--glass);box-shadow:0 8px 30px rgba(15,10,8,0.04)}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr;gap:18px}
+    .about-visual{border-radius:10px;overflow:hidden}
+
+    /* Menu */
+    .menu-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    .menu-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;transition:transform .18s ease, box-shadow .18s;}
+    .menu-item:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(43,31,24,0.12)}
+    .menu-thumb{width:96px;height:72px;border-radius:8px;object-fit:cover}
+    .menu-meta{flex:1}
+    .price{font-weight:700;color:var(--bg-dark)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .map-stub{background:linear-gradient(180deg,#e9dfd2,#efe6d9);height:220px;border-radius:10px;display:grid;place-items:center;color:var(--muted);border:1px dashed rgba(43,31,24,0.06)}
+    .socials a{margin-right:10px;color:var(--bg-dark);text-decoration:none}
+
+    /* Footer */
+    footer{margin:40px 0 80px;text-align:center;color:var(--muted)}
+
+    /* Animations & utilities --------------------------------------------- */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    .muted{color:var(--muted)}
+
+    /* Responsive ---------------------------------------------------------- */
+    @media(min-width:720px){
+      .hero-grid{grid-template-columns:1fr 420px}
+      .about{grid-template-columns:1fr 360px}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr 360px}
+      h1{font-size:2.4rem}
+    }
+    @media(min-width:1100px){
+      main{padding:0}
+      .hero{padding:40px}
+      .hero-image{height:420px}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
+  <header>
+    <div class="nav-row">
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden>R&L</div>
+        <div>
+          <div style="font-weight:700">Roast & Leaf</div>
+          <div style="font-size:12px;color:var(--muted)">Specialty Coffee</div>
+        </div>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact" class="button">Contact</a></li>
+          <li><a href="#order" class="button btn-primary">Order Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div id="main">
+    <!-- HERO: welcoming atmosphere + CTA -->
+    <section class="hero card reveal">
+      <div class="hero-grid">
+        <div class="hero-inner">
+          <h1>Warm beans. Crafted with care. Coffee worth lingering for.</h1>
+          <p class="lead">We source single-origin beans and roast them in small batches. Come taste our carefully crafted espresso, silky lattes, and seasonal pour-overs.</p>
+
+          <div class="cta-row">
+            <a href="#menu" class="btn btn-primary">View Menu</a>
+            <a href="#contact" class="btn btn-ghost">Visit Us</a>
+          </div>
+
+          <div style="margin-top:14px;color:var(--muted);font-size:14px">Open daily 7am–6pm • Pickup & walk-ins welcome</div>
+        </div>
+
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Coffee pour"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT: short origin story ----------------------------------------- -->
+    <section id="about" class="reveal">
+      <div class="card about">
+        <div>
+          <h2>Our Story</h2>
+          <p class="muted">Roast & Leaf began as a small roastery focused on sustainable sourcing and transparent relationships with farmers. We roast weekly to highlight each origin's unique character — bright florals, chocolatey notes, or bold cocoa bitters.</p>
+
+          <h3 style="margin-top:18px">Our Roast</h3>
+          <p class="muted">We roast to clarity: balancing sweetness, acidity, and body. Our baristas treat each cup like a craft — precise, creative, and made to share.</p>
+        </div>
+
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1511453720-05a6b3d5b8d8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Roasting beans" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU: structured list of drinks & pastries ------------------------- -->
+    <section id="menu" class="reveal">
+      <h2 style="margin-bottom:12px">Menu</h2>
+      <div class="card">
+        <p class="muted">A curated selection — sustainable, seasonal, and handcrafted.</p>
+
+        <!-- Menu filter buttons -->
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-ghost" onclick="filterMenu('all')">All</button>
+          <button class="btn btn-ghost" onclick="filterMenu('espresso')">Espresso</button>
+          <button class="btn btn-ghost" onclick="filterMenu('latte')">Lattes</button>
+          <button class="btn btn-ghost" onclick="filterMenu('pour-over')">Pour-Over</button>
+          <button class="btn btn-ghost" onclick="filterMenu('pastry')">Pastries</button>
+        </div>
+
+        <div style="margin-top:14px" class="menu-grid" id="menuGrid">
+          <!-- Menu items: image, name, description, price -->
+          <article class="menu-item" data-type="espresso">
+            <img class="menu-thumb" src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Espresso"/>
+            <div class="menu-meta">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Espresso</strong> <span class="price">$2.50</span></div>
+              <div class="muted" style="font-size:13px">Rich, syrupy single or double shot.</div>
+            </div>
+          </article>
+
+          <article class="menu-item" data-type="latte">
+            <img class="menu-thumb" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Latte"/>
+            <div class="menu-meta">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Caffe Latte</strong> <span class="price">$4.00</span></div>
+              <div class="muted" style="font-size:13px">Silky steamed milk over a balanced espresso.</div>
+            </div>
+          </article>
+
+          <article class="menu-item" data-type="pour-over">
+            <img class="menu-thumb" src="https://images.unsplash.com/photo-1518005068232-7b1d4f0b1f3b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pour over"/>
+            <div class="menu-meta">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Pour-over</strong> <span class="price">$4.50</span></div>
+              <div class="muted" style="font-size:13px">Carefully brewed single-origin pour-over.</div>
+            </div>
+          </article>
+
+          <article class="menu-item" data-type="pastry">
+            <img class="menu-thumb" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pastry"/>
+            <div class="menu-meta">
+              <div style="display:flex;justify-content:space-between;align-items:center"><strong>Almond Croissant</strong> <span class="price">$3.75</span></div>
+              <div class="muted" style="font-size:13px">Buttery, flaky, toasted almonds.</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: common questions and answers ------------------------------- -->
+    <section id="faq" class="reveal" style="margin-top:18px">
+      <h2>FAQ</h2>
+      <div class="card">
+        <div class="faq-item">
+          <button class="btn btn-ghost" aria-expanded="false" onclick="toggleFAQ(this)">Do you offer dairy alternatives?</button>
+          <div class="muted" style="margin-top:8px;display:none">Yes — oat, almond, and soy milks are available.</div>
+        </div>
+        <div class="faq-item" style="margin-top:8px">
+          <button class="btn btn-ghost" aria-expanded="false" onclick="toggleFAQ(this)">Can I order ahead?</button>
+          <div class="muted" style="margin-top:8px;display:none">Yes — use our "Order Now" link or call the shop to place pickup orders.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT: location, hours, socials --------------------------------- -->
+    <section id="contact" class="reveal">
+      <h2 style="margin-bottom:12px">Contact & Location</h2>
+      <div class="card contact-grid">
+        <div>
+          <h3>Find Us</h3>
+          <!-- Map stub: replace with embedded map iframe in production -->
+          <div class="map-stub" role="img" aria-label="Map placeholder">Map placeholder — embed Google Maps iframe here</div>
+
+          <h3 style="margin-top:12px">Hours</h3>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.6">
+            <li>Mon–Fri: 7:00am – 6:00pm</li>
+            <li>Sat: 8:00am – 5:00pm</li>
+            <li>Sun: 8:00am – 3:00pm</li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <h3>Social</h3>
+            <div class="socials">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="Twitter">Twitter</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p class="muted">Questions? Catering requests? Drop us a note or call the shop.</p>
+
+          <form class="card" style="margin-top:12px;padding:12px;" action="https://httpbin.org/post" method="post" target="_blank">
+            <label for="name" class="muted">Name</label>
+            <input id="name" name="name" type="text" required style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--glass);margin-bottom:8px">
+            <label for="email" class="muted">Email</label>
+            <input id="email" name="email" type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--glass);margin-bottom:8px">
+            <label for="message" class="muted">Message</label>
+            <textarea id="message" name="message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--glass)"></textarea>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button class="btn btn-primary" type="submit">Send</button>
+              <button type="reset" class="btn btn-ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">© Roast & Leaf — Crafted small-batch coffee</div>
+    </footer>
+    </div>
+  </main>
+
+  <!-- Scripts: intersection observer for fade-in reveals ------------------>
+  <script>
+    // Fade-in on scroll: add `visible` class when element enters viewport
+    (function(){
+      const opts = {threshold: 0.12};
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('visible');
+            // optional: unobserve to improve performance
+            io.unobserve(e.target);
+          }
+        })
+      }, opts);
+
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    })();
+
+    // Small enhancement: smooth offset scroll for anchored nav clicks on smaller screens
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        // default behavior already smooth via CSS, we only offset if needed
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          const el = document.querySelector(id);
+          if(el){
+            e.preventDefault();
+            const top = el.getBoundingClientRect().top + window.scrollY - 18; // small offset
+            window.scrollTo({top, behavior:'smooth'});
+          }
+        }
+      })
+    })
+    
+    // Menu filtering
+    function filterMenu(type){
+      const items = document.querySelectorAll('#menuGrid .menu-item');
+      items.forEach(it=>{
+        const t = it.getAttribute('data-type')||'all';
+        if(type==='all' || t===type) { it.style.display='flex'; }
+        else { it.style.display='none'; }
+      })
+    }
+
+    // FAQ accordion toggle
+    function toggleFAQ(btn){
+      const open = btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      const ans = btn.nextElementSibling;
+      if(!open){ ans.style.display='block'; ans.style.opacity=0; setTimeout(()=>ans.style.opacity=1,10);} else { ans.style.opacity=0; setTimeout(()=>ans.style.display='none',200);}    
+    }
+
+    // Floating order CTA (show after scrolling)
+    (function(){
+      const cta = document.createElement('a');
+      cta.href='#order';
+      cta.textContent='Order Now';
+      cta.className='btn btn-primary';
+      cta.style.position='fixed';
+      cta.style.right='18px';
+      cta.style.bottom='18px';
+      cta.style.boxShadow='0 12px 30px rgba(43,31,24,0.18)';
+      cta.style.zIndex=120;
+      cta.style.display='none';
+      document.body.appendChild(cta);
+      window.addEventListener('scroll', ()=>{
+        if(window.scrollY>220) cta.style.display='inline-flex'; else cta.style.display='none';
+      })
+    })();
+  </script>
+</body>
+</html>
