@@ -6,15 +6,15 @@
     <meta name="description" content=" Hi my This is my first webpage"> -->
     <title> My First Webpage</title>
    <!-- <link rel="icon" type="image/x-icon" href="favicon.png"> -->
-    <link rel="stylesheet" href="aiuun.css">
+    <link rel="stylesheet" href="style.css">
 
   </head>
   <body>
     
     <header>
     <h1> My Goals for this Year</h1>
-    <nav aria-label="primary-navigation">
-      <h2>Primary Navigation</h2>
+    <nav aria-labelledby="primary-navigation">
+      
       <ul> 
         <li>
         <a href="#html">learning HTML</a>
@@ -55,10 +55,64 @@
     </ol>
     <aside>
       <details>
-        <summary>the number of hours I spend on each activity</summary>
-        <p>I spend about 2 hours on HTML, 1 hour on CSS, and 1 hour on JavaScript each day.</p>
+        <summary><mark>the number of hours I spend on each activity</summary>
+        <p>I start at <time datetime="08:00">8am</time>and 
+          i write code for <time datetime="PT3H">3 hours</time> every morning</p>
       </details>
     </aside>
+    <br>
+    <table>
+      <caption>My Daily Schedule</caption>
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Time</th>
+          <th>Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>Morning</th>
+        <td>
+          <time datetime="08:00">8am</time> - <time datetime="11:00">11pm</time>
+        </td>
+        <td>
+          write code
+        </td>
+      </tr>
+      <tr>
+        <th>break</th>
+        <td>
+          <time datetime="11:00">11am</time> - <time datetime="12:00">12pm</time>
+        </td>
+        <td>
+          Eat launch
+        </td>
+      </tr>
+      <tr>
+        <th> Afternoon</th>
+        <td>
+          <time datetime="12:00">12pm</time> - <time datetime="17:00">5pm</time>
+        </td>
+        <td>
+          study for my exams
+        </td>
+      </tr>
+      <tr>
+        <th> Dvening</th>
+        <td rowspan="2">All Other Times</td>
+        <td>Free time</td>
+      </tr>
+          <td>Sleep</td> 
+        </tr>
+      </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">This is what i do every day</td>
+        </tr>
+      </tfoot>
+    </table
     </section>
       </article>
       
@@ -94,6 +148,7 @@
 
 
   <!-- This is a comment -->
+
       <section> 
      <h3> Places I'd will like to Avoid</h3>lawal akorede is a bot
      <dl>
@@ -122,7 +177,7 @@
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" 
         placeholder="Enter your first name "
-        autocomplete="on" required autofocus>
+        autocomplete="on" required >
         </p>
         <p> 
         <label for="lastName">Last Name:</label>
