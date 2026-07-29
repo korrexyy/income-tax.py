@@ -1,141 +1,42 @@
-*{
-margin: 0px;
-padding: 0px;
-}
-body{
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: #24211F;
-}
-nav{
-  /* color: #F4EBDD; */
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-.logo{
-  color: #F4EBDD;
-  font-size: 3rem;
-}
-.navlinks {
-  display: flex;
-  gap: 20px;
-  font-size: 1.5rem;
-}
-.navlinks a {
-  color: #F4EBDD;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        text-decoration: none;
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index1.css">
 
-}
-.about{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  padding: 100px 0;
-}
-.aboutdesign{
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 28px;
-  max-width: 650px;
-}
-.aboutdesign p:first-child{
-  color: #C68E66;
-  padding: 0px;
-  letter-spacing: 2px;
-  font-size: 1.1rem;
-  justify-content: flex-start;
-  display: flex;
-  margin: 0px;
-}
-.aboutdesign h1{
-  display: flex;
-  justify-content: center;
-  font-size: 4rem;
-  line-height: 1.1;
-  margin: 0px;
-  color:#F4EBDD;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-.aboutdesign p:nth-last-of-type(2){
-  font-size: 1.35rem;
-  line-height: 1.6;
-  color: #D3C9BA;
-  padding: 0px;
-  display: flex;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  justify-content: flex-start;
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">R3X COFFI</div>
+                <div class="navlinks">
+                    <a href="#">Menu</a>
+                    <a href="#">Visit</a>
+                </div>
+            </nav>
+            <hr>
+        </header>
+        <main>
+            <section class="about">
+                <div class="aboutdesign">
+                <P>NEIGHBORHOOD ROASTERY · EST. 2016</P>
+                <h1>Slow mornings, 
+                    <br>poured beautifully.</h1>
+                <p> Thoughtful coffee, flaky pastries, and
+                    <br> a sunlit corner made for lingering.</p>
+                <button> RESERVE A TABLE </button>
+                <p> OPEN DAILY · 7:30AM — 4:00PM</p>
+                </div>
+                <img src="coffee.jpg" alt="coffee shop interior" class="about-shop">
+            </section>
+            <div class="lot">
+                    <section class="sec2">
+                        <div>
+                            <h2>Today's pour</h2>
+                            <P> made with care</P>
+                        </div>
+                    </section>
+                    </div>
 
-}
-.aboutdesign button{
-  background-color: #C68E66;
-  padding: 16px 36px;
-  font-weight: 600px;
-  font-size: 1.1rem;
-  border-radius: 20px;
-  border: 2px solid;
-  color: #1a1a1a;
-  margin-top: 8px;
-}
-.aboutdesign p:last-of-type{
-  color: #A89D91;
-  font-size: 12px;
-  font-size: 1.05rem;
-  letter-spacing: 1.5px;
-  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-.about-shop{
-  flex: 1;
-  max-width: 520px;
-  width: 100%;
-  border-radius: 30px;
-  object-fit: cover;
-}
-
-@media (max-width: 900px) {
-  .about{
-     flex-direction: column;        /* dont really understand this line */
-    align-items: flex-start;
-  }
-  .about-shop{
-    width: 100%;
-    max-width: 100%;
-  }
-}
-.lot{
-   background-color: #F4EBDD;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-/* .sec2{
-  background-color: #F4EBDD;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-} */
-
-/* }
-width: 100%;
-height: min-content;
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
-overflow: visible;
-padding: 0px;
-align-content: center;
-flex-wrap: nowrap;
-gap: 64px;
-position: absolute;
-border-radius: 0px 0px 0px 0px; */
+        </main>
+    </body>
+</html>
