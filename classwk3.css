@@ -1,0 +1,39 @@
+*{
+background-color: antiquewhite;
+}
+body{
+  padding: 40px;
+}
+.box{
+  height: 100px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxpro{
+  display: flex ;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aliceblue;
+  height: 500px;
+  
+}
+
+.box1{
+  background-color: aqua;
+}
+.box2{
+  background-color: purple; 
+}
+.box3{
+  background-color: red; 
+}
+.box4{
+  background-color: orange; 
+}
+.box5{
+  background-color: pink; 
+}
