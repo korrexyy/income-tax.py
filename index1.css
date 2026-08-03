@@ -3,8 +3,8 @@ margin: 0px;
 padding: 0px;
 }
 body{
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: #24211F;
 }
 nav{
@@ -81,6 +81,9 @@ nav{
   color: #1a1a1a;
   margin-top: 8px;
 }
+.aboutdesign button:hover{
+  background-color: #9D684C;
+}
 .aboutdesign p:last-of-type{
   color: #A89D91;
   font-size: 12px;
@@ -112,11 +115,229 @@ main{
     max-width: 100%;
   }
 }
-.lot{
-   background-color: #F4EBDD;
+.menu-section{
+  background-color: #F4EBDD;
+  padding: 40px;
+  font-family: serif;
+}
+.menu-header{
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dcd8d0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.menu-header h2{
+  font-size: 2.2rem;
+  font-weight: normal;
+  margin: 0px;
+} 
+.menu-header .tagline{
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #a37251;
+
+}
+.menu-list{
+  
+}
+.menu-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dcd8d0;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+.menu-info h3{
+  font-family: sans;
+  font-weight: normal;
+}
+.menu-info p{
+  font-family: sans-serif;
+  color: #777;
+}
+.price{
+  font-weight: bold;
+  color:#333;
+
+}
+.location-banner{
+  background-color: #9D684C;
+  padding: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner-content .sub-level{
+  display: block;
+  font-family: sans-serif;
+  color: #F4EBDD;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+
+}
+.banner-content h2{
+  color: #24211F;
+  font-size: 2.2rem;
+  font-weight: normal;
+  font-family: serif;
+  padding-bottom: 10px;
+
+}
+.banner-content p{
+  color: #332B27;
+  font-family: sans-serif;
+  padding-bottom: 5px;
+  font-size: 0.9;
+  opacity: 0.9;
+}
+.badge {
+  width: 110px;
+  height: 110px;
+  border: 1px solid rgba( 255, 255, 255, 0.4);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+
+}
+footer{
+  background-color: #24211F;
+  display: flex;
+  justify-content: center;
+  color: #dcd8d0;
+  padding: 20px 0;
+}
+
+.reserve-btn {
+  display: inline-block;
+  background-color: #C68E66;
+  padding: 16px 36px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  border: 2px solid;
+  color: #1a1a1a;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.reserve-btn:hover {
+  background-color: #9D684C;
+}
+
+.page-content {
+  padding: 48px 0 60px;
+}
+
+.page-hero {
+  max-width: 760px;
+  margin-bottom: 36px;
+}
+
+.page-tag {
+  color: #C68E66;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.page-hero h1 {
+  color: #F4EBDD;
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.page-hero p {
+  color: #D3C9BA;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.card-grid,
+.visit-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background: #2e2725;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 24px;
+  color: #F4EBDD;
+}
+
+.info-card h2 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.info-card ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: #D3C9BA;
+}
+
+.info-card p {
+  margin-bottom: 8px;
+  color: #D3C9BA;
+  line-height: 1.6;
+}
+
+.form-card form {
+  display: grid;
+  gap: 14px;
+}
+
+.form-card label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.form-card input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #7a5a47;
+  background: #1f1a19;
+  color: #F4EBDD;
+}
+
+.form-card button {
+  background-color: #C68E66;
+  color: #1a1a1a;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .navlinks {
+    font-size: 1.1rem;
+  }
 }
 /* .sec2{
   background-color: #F4EBDD;
