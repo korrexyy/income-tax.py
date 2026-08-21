@@ -1,84 +1,215 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="hotel.css">
-  <title> The Grand Soleil </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Grand Soleil</title>
+    <link rel="stylesheet" href="hotel.css" />
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="top-nav">
         <div class="logo">THE GRAND SOLEIL</div>
         <div class="navlinks">
-          <a href="#">Home</a>
-          <a href="#">Suites</a>
-          <a href="#">Amenities</a>
-          <a href="#">Dining</a>
-          <a href="#">Our Story</a>
+          <a href="#home">Home</a>
+          <a href="#suites">Suites</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#dining">Dining</a>
+          <a href="#story">Our Story</a>
         </div>
-        <div class="navbutton">
-          <button>Book Stay</button>
-        </div>
+        <a href="#booking" class="nav-cta">Book Stay</a>
       </nav>
     </header>
-   <main>
-    <section class="about">
-      <div class="aboutdesign">
-        <span> A Sanctuary of Sun & Stone</span>
-        <h1>Your Golden<br>Oasis Awaits</h1>
-        <p>Nestled on the sun-drenched coast, The Grand Soleil<br> blends timeless Mediterranean architecture with warm,<br>bespoke hospitality. Experience pure relaxation.</p>
-      </div>
-        <div class="aboutbutton">
-        <button>Reserve Your Suite</button>
-        <button>Explore Gallery</button >
-        </div>
-        <img src="hotel.png" alt="hotel exterior" class="about-hotel">
-    </section>
-    <section class=" hotel-accommodations">
-      <header class="accommodation-header">
-        <span class="accommodation-tagline"> Accommodations</span>
-        <h2 class="accommodation-title">Reside in Quiet luxury</h2>
-        <p class="accommodations-subtitle">Each suite is intentionally designed as an sanctuary of light, finished with <br>warm stone, fine linens, and panoramic coastal views.</p>
-      </header>
-      <div class="suites-grid">
-        <article class="suite-card">
-          <div class="room-thumbnail">
-            <img src="Suite1.png" alt="suite1 img">
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow">A Sanctuary of Sun &amp; Stone</span>
+          <h1>Your Golden Oasis Awaits</h1>
+          <p>
+            Nestled on the sun-drenched coast, The Grand Soleil blends timeless
+            Mediterranean architecture with warm hospitality. Experience pure
+            relaxation and bespoke coastal luxury.
+          </p>
+          <div class="hero-actions">
+            <a href="#booking" class="button primary">Reserve Your Suite</a>
+            <a href="#suites" class="button secondary">Explore Suites</a>
           </div>
-          <div class="suite-details">
-            <h3 class="room-details">Delexe Terrace Room</h3>
-            <span class="room-specs">45 SQM · PRIVATE BALCONY</span>
-            <p class="room-description">A beautifully appointed master room featuring<br> a sun-soaked terrace, signature linen bedding,<br> and sweeping views of the azure coast.</p>
-            <div class="room-booking-now">
-              <div class="rates">
-                <span class="room-prefix">From</span>
-                <span class="room-price">$350<small>/ night</small></span>
-                </div>
-         <a href="#" class="btn-reserve">Explore</a>
         </div>
+        <div class="hero-image">
+          <img src="hotel.png" alt="Hotel exterior" />
+        </div>
+      </section>
+
+      <section class="accommodations" id="suites">
+        <div class="section-heading">
+          <span class="section-label">Accommodations</span>
+          <h2>Reside in Quiet Luxury</h2>
+          <p>
+            Each suite is intentionally designed as a sanctuary of light, finished
+            with warm stone, fine linens, and panoramic coastal views.
+          </p>
+        </div>
+
+        <div class="suites-grid">
+          <article class="suite-card">
+            <div class="room-thumbnail">
+              <img src="Suite1.png" alt="Deluxe Terrace Room" />
+            </div>
+            <div class="suite-details">
+              <h3>Deluxe Terrace Room</h3>
+              <span>45 SQM · PRIVATE BALCONY</span>
+              <p>
+                A beautifully appointed room featuring a sun-soaked terrace,
+                signature linens, and sweeping views of the azure coast.
+              </p>
+              <div class="room-footer">
+                <div>
+                  <span class="from-label">From</span>
+                  <span class="price">$350<small>/ night</small></span>
+                </div>
+                <a href="#booking" class="button tertiary">Explore</a>
               </div>
             </div>
-          </div>
-        </article>
-        <article class="suite-card">
-          <div class="room-thumbnail">
-            <img src="Suite3.png" alt="suite3 img">
-          </div>
-          <div class="suite-details">
-            <h3 class="room-details">The Pavilion Villa</h3>
-            <span class="room-specs">120 SQM · PRIVATE PLUNGE POOL</span>
-            <p class="room-description">The ultimate retreat. Includes a private walled <br>courtyard, heated plunge pool, dedicated<br>butler pantry, and direct path to the beach.</p>
-            <div class="room-booking-now">
-              <div class="rates">
-                <span class="room-prefix">From</span>
-                <span class="room-price">$580<small>/ night</small></span>
+          </article>
+
+          <article class="suite-card">
+            <div class="room-thumbnail">
+              <img src="Suite2.png" alt="Coastal View Suite" />
+            </div>
+            <div class="suite-details">
+              <h3>Coastal View Suite</h3>
+              <span>80 SQM · PANORAMIC TERRACE</span>
+              <p>
+                A spacious suite with a private lounge, indulgent bath,
+                uninterrupted ocean vistas, and direct sunset balcony access.
+              </p>
+              <div class="room-footer">
+                <div>
+                  <span class="from-label">From</span>
+                  <span class="price">$420<small>/ night</small></span>
                 </div>
-         <a href="#" class="btn-reserve">Explore</a>
-        </div>
+                <a href="#booking" class="button tertiary">Explore</a>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
+
+          <article class="suite-card">
+            <div class="room-thumbnail">
+              <img src="Suite3.png" alt="Pavilion Villa" />
+            </div>
+            <div class="suite-details">
+              <h3>The Pavilion Villa</h3>
+              <span>120 SQM · PRIVATE PLUNGE POOL</span>
+              <p>
+                The ultimate retreat with a private courtyard, heated plunge pool,
+                dedicated pantry, and a direct path to the beach.
+              </p>
+              <div class="room-footer">
+                <div>
+                  <span class="from-label">From</span>
+                  <span class="price">$580<small>/ night</small></span>
+                </div>
+                <a href="#booking" class="button tertiary">Explore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="amenities" id="amenities">
+        <div class="section-heading">
+          <span class="section-label">The Experience</span>
+          <h2>Curated Moments at Every Turn</h2>
+          <p>
+            From a serene spa retreat to seaside dining, discover amenities that
+            refresh the body and calm the mind.
+          </p>
+        </div>
+
+        <div class="amenities-grid">
+          <article class="feature-card">
+            <h3>Signature Spa</h3>
+            <p>
+              Rejuvenating treatments, saltwater rituals, and private couple
+              suites designed to restore balance.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Infinity Pool</h3>
+            <p>
+              A heated infinity pool framed by loungers, shaded cabanas, and sea
+              views that meet the horizon.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Wellness Studio</h3>
+            <p>
+              Daily yoga, guided meditation, and curated fitness sessions by the
+              shore.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Concierge Service</h3>
+            <p>
+              Bespoke experiences, private dining, sunset cruises, and tailored
+              local discovery.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dining" id="dining">
+        <div class="section-heading">
+          <span class="section-label">Dining</span>
+          <h2>Flavors Inspired by the Coast</h2>
+          <p>
+            Gather over authentic Mediterranean cuisine prepared with local
+            seasonal ingredients and artisan wines.
+          </p>
+        </div>
+
+        <div class="dining-cards">
+          <article class="dining-card">
+            <h3>Sea Salt Terrace</h3>
+            <p>
+              Share small plates and fresh seafood beneath pergolas draped in
+              jasmine and twilight lanterns.
+            </p>
+          </article>
+          <article class="dining-card">
+            <h3>Sunrise Lounge</h3>
+            <p>
+              Start the day with vibrant breakfast bowls, espresso, and coastal
+              views that open with the morning light.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="story" id="story">
+        <div class="story-copy">
+          <span class="section-label">Our Story</span>
+          <h2>Where Warmth Meets Timeless Design</h2>
+          <p>
+            Inspired by classic seaside villas, The Grand Soleil invites guests
+            to savor slow luxury, gentle service, and the romance of an endless
+            horizon.
+          </p>
+          <a href="#booking" class="button primary">Start Your Stay</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>&copy; 2026 The Grand Soleil. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#suites">Suites</a>
+          <a href="#amenities">Amenities</a>
+        </div>
       </div>
-    </section>
-   </main>
+    </footer>
   </body>
 </html>
