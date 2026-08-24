@@ -246,3 +246,120 @@ while (attempts < 3) {
 
 console.log(attempts); // 3
 
+//  Arrays
+
+
+const fruits = ["apple", "banana", "cherry"];
+ 
+fruits[0]        // "apple", the first item
+fruits[2]        // "cherry", the third item
+fruits.length   // 3
+fruits[10]       // undefined, index doesn't exist
+  
+console.log(fruits[10])
+
+
+// Objects: Key-Value Pairs
+
+
+const user = {
+  name: "Ada",
+  age: 28,
+  isAdmin: false
+};
+ console.log(user.name)
+ console.log(user.age)
+ console.log(user.isAdmin)
+
+
+//  forEach: Looping Without a Loop
+
+const fruitList = ["apple", "banana", "cherry"];
+ 
+fruitList.forEach((fruit) => {
+  console.log(fruit);
+});
+
+// map: Transform Every Item
+
+
+const prices = [10, 20, 30];
+ 
+const withTax = prices.map((p) => p * 1.1);
+
+
+prices.forEach((prices) => {
+  console.log((prices));
+})
+
+
+withTax.forEach((prices) => {
+  console.log((prices));
+})
+// [11, 22, 33], a new array, prices is unchanged
+
+
+
+// filter: Keep Only What Matches
+const scores = [45, 92, 67, 88, 30];
+const passing = scores.filter((s) => s >= 50);
+ 
+// [92, 67, 88], only the ones that passed the test
+
+//  Try it yourself
+
+const players = [
+  {name: "doku",price: 71 },
+  {name: "luis diaz",price: 120 },
+  {name: "yamal", price: 211 },
+  {name: "vini", price: 150 },
+  {name: "yildiz", price: 65 },
+];
+
+// const pricechange = players.map((p) => Number(p.price) * 0.5)
+const pricechange = players.map((p) => p.name)
+// const pricechange = players.map((p) => Number(p.name))
+const pricediff = players.filter((s) => Number(s.price) > 100)
+// const pricechain = players.map((p) => p.name ).filter((s) => Number(s.price) > 100)
+
+
+
+// for map and filter on the same line don't use that forEach stuff
+
+const pricechain = players.filter((s) => Number(s.price) < 100).map((p) => p.name)
+console.log("pricechain:",pricechain)
+
+
+players.forEach((bids) => console.log(bids))
+pricechange.forEach((players) => console.log(players))
+pricediff.forEach((players) => console.log(players))
+
+
+
+// // week 4
+// const card = document.querySelector(".card");
+// card.textContent 
+const card = document.querySelector(".brand");
+card.textContent = "New content!";
+
+
+
+ const rad = document.querySelectorAll(".card");
+ rad.forEach((rad) => {
+  console.log(rad.textContent);
+});
+
+const header = document.getElementById("header");
+console.log(header)
+
+
+
+
+
+
+const title = document.querySelector("h1");
+ 
+title.textContent = "New Heading";
+  // safe, sets plain text
+title.innerHTML = "<em>New</em> Heading";
+  // parses as HTML
