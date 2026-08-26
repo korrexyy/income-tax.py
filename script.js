@@ -228,7 +228,7 @@ console.log(kkt);
     return "C"
     else if (score >= 40)
     return "D"
-    else  (score >= 30)
+    else
     return "F"
 
   };
@@ -290,7 +290,7 @@ const withTax = prices.map((p) => p * 1.1);
 
 prices.forEach((prices) => {
   console.log((prices));
-})
+});
 
 
 withTax.forEach((prices) => {
@@ -354,6 +354,7 @@ console.log(header)
 
 
 
+// Reading and Changing What's on Screen
 
 
 
@@ -363,3 +364,70 @@ title.textContent = "New Heading";
   // safe, sets plain text
 title.innerHTML = "<em>New</em> Heading";
   // parses as HTML
+
+
+
+  // Changing Styles and Classes
+
+
+const cardElement = document.querySelector(".card");
+ 
+cardElement.classList.add("active");      // adds a class
+cardElement.classList.remove("active");   // removes a class
+cardElement.classList.toggle("active");   // on if off, off if on
+ 
+cardElement.style.color = "red";
+  // direct style, use sparingly
+
+// Creating and Removing Elements
+
+
+const destination = document.createElement("div");
+destination.className = "card";
+destination.textContent = "Paris";
+ 
+const destinationList = document.querySelector("#flights");
+if (destinationList) {
+  destinationList.appendChild(destination);
+  // destination.remove(); // removes the new destination from the page
+}
+  // adds it to the page
+
+
+  
+// Event Listeners and the Event Object
+
+
+const button = document.querySelector("button");
+
+
+  button.addEventListener("click", (e) => {
+    console.log("hello!", e.target);
+    // e.preventDefault();
+    // stop default behavior
+  });
+
+
+
+  // try it yourself
+
+
+let counter = 0;
+const counterValue = document.querySelector("#counter-value");
+const incrementButton = document.querySelector("#increment-button");
+const resetButton = document.querySelector("#reset-button");
+
+if (counterValue && incrementButton && resetButton) {
+  incrementButton.addEventListener("click", \() => {
+    counter += 1;
+    counterValue.textContent = counter;
+  });
+
+  resetButton.addEventListener("click", () => {
+    counter = 0;
+    counterValue.textContent = counter;
+  });
+}
+
+
+
