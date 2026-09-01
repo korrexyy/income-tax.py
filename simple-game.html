@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Space Shooter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #1e293b, #020817 60%);
+        color: white;
+        touch-action: none;
+      }
+
+      .game-shell {
+        width: min(92vw, 700px);
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid #38bdf8;
+        border-radius: 18px;
+        padding: 12px;
+        box-shadow: 0 25px 60px rgba(8, 47, 73, 0.5);
+      }
+
+      .hud {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: min(68vh, 500px);
+        background: linear-gradient(to bottom, #020817, #111827 30%, #0f172a);
+        border: 2px solid #38bdf8;
+        border-radius: 12px;
+        touch-action: none;
+      }
+
+      .controls {
+        margin-top: 12px;
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      #fireBtn {
+        background: linear-gradient(135deg, #f97316, #ea580c);
+      }
+
+      #message {
+        text-align: center;
+        margin-top: 12px;
+        color: #dbeafe;
+        min-height: 24px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>Lives: <span id="lives">3</span></div>
+      </div>
+
+      <canvas id="gameCanvas" width="660" height="500"></canvas>
+
+      <div class="controls">
+        <button id="startBtn">Start Game</button>
+        <button id="fireBtn">Fire</button>
+      </div>
+
+      <div id="message">Drag to move. Tap or press Fire to shoot.</div>
+    </div>
+
+    <script src="simple-game.js"></script>
+  </body>
+</html>

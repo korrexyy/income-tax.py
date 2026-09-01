@@ -179,11 +179,11 @@ console.log(0 =="0")
 console.log(0 ==="0")
 
 // arithmetic
-function add(a, b) {
+function addNumbers(a, b) {
     return a + b;
 }
 
-console.log(add(5, 3));
+console.log(addNumbers(5, 3));
 
 function sub(c, d){
   return c - d;
@@ -207,10 +207,10 @@ function square(number) {
 let result = square(5);
 console.log(result);
 
-function square(num){
+function squareAgain(num){
   return num*num;
 }
-let kkt = square(1000);
+let kkt = squareAgain(1000);
 console.log(kkt);
 
 
@@ -412,22 +412,40 @@ const button = document.querySelector("button");
   // try it yourself
 
 
-let counter = 0;
-const counterValue = document.querySelector("#counter-value");
-const incrementButton = document.querySelector("#increment-button");
-const resetButton = document.querySelector("#reset-button");
+// let counter = 0;
+// const counterValue = document.querySelector("#counter-value");
+// const incrementButton = document.querySelector("#increment-button");
+// const resetButton = document.querySelector("#reset-button");
 
-if (counterValue && incrementButton && resetButton) {
-  incrementButton.addEventListener("click", \() => {
-    counter += 1;
-    counterValue.textContent = counter;
-  });
+// if (counterValue && incrementButton && resetButton) {
+//   incrementButton.addEventListener("click", \() => {
+//     counter += 1;
+//     counterValue.textContent = counter;
+//   });
 
-  resetButton.addEventListener("click", () => {
-    counter = 0;
-    counterValue.textContent = counter;
-  });
+//   resetButton.addEventListener("click", () => {
+//     counter = 0;
+//     counterValue.textContent = counter;
+//   });       
+// }
+
+// Breakpoints
+// Sources panel breakpoint
+function calculate() {
+    let price = 500;
+    let quantity = 2;
+    let total = price * quantity;
+
+    console.log(total);
 }
 
+calculate();
 
+// debugger; statement
 
+let price = 500;
+let quantity = 2;
+
+// debugger;
+
+let t
