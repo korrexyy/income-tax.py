@@ -1,5 +1,5 @@
 // var, let, and const
-
+ 
 // global scope
 var x = 1; 
 let y = 2;
@@ -58,3 +58,18 @@ player.intro();
 
 
 // this inside an object method
+
+
+
+
+
+// //clousure
+
+// function x(){
+//   var a= 7;
+//   function y(){
+//     console.log(a);
+//   }
+//   y();
+// }
+// x();
